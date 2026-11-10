@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Razka WNI - Toko Sepatu Branded Original</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0284c7',
+                            600: '#0369a1',
+                            700: '#075985',
+                            900: '#0c4a6e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #c1c1c1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #a8a8a8;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased min-h-screen flex flex-col">
+
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md shadow-sm border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3 cursor-pointer" onclick="scrollToTop()">
+                    <div class="w-12 h-12 bg-gradient-to-tr from-brand-600 to-indigo-600 rounded-xl flex items-center justify-center text-white text-2xl font-black shadow-lg shadow-brand-500/30">
+                        R
+                    </div>
+                    <div>
+                        <span class="text-2xl font-black tracking-tight bg-gradient-to-r from-brand-700 to-indigo-800 bg-clip-text text-transparent">RAZKA WNI</span>
+                        <span class="block text-xs font-semibold text-gray-400 tracking-widest uppercase">Branded Footwear</span>
+                    </div>
+                </div>
+
+                <!-- Navigation Desktop -->
+                <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold text-gray-600">
+                    <a href="#katalog" class="hover:text-brand-600 transition">Katalog Sepatu</a>
+                    <a href="#size-chart" class="hover:text-brand-600 transition">Tabel Ukuran</a>
+                    <a href="#pembayaran" class="hover:text-brand-600 transition">Metode Pembayaran</a>
+                    <a href="#simulasi" class="hover:text-brand-600 transition">Simulasi Angsuran</a>
+                </nav>
+
+                <!-- Action Button / Cart -->
+                <div class="flex items-center space-x-4">
+                    <button onclick="toggleCartModal()" class="relative p-2.5 text-gray-700 hover:text-brand-600 bg-gray-100 hover:bg-brand-50 rounded-full transition">
+                        <i class="fa-solid fa-cart-shopping text-lg"></i>
+                        <span id="cart-count" class="absolute -top-1 -right-1 bg-red-500 text-white text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center hidden">0</span>
+                    </button>
+                    <a href="https://wa.me/6287831475459?text=Halo%20Razka%20WNI,%20saya%20ingin%20bertanya%20mengenai%20produk%20sepatu." target="_blank" class="hidden sm:inline-flex items-center space-x-2 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-4 py-2.5 rounded-xl shadow-md transition transform active:scale-95 text-sm">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>CS WhatsApp</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-b from-brand-900 via-brand-700 to-indigo-900 text-white py-16 lg:py-24 overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6 text-center lg:text-left">
+                    <span class="inline-block bg-white/10 backdrop-blur-md text-brand-100 text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider border border-white/20">
+                        100% Original & Baru
+                    </span>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                        Tampil Trendy dengan Sepatu Branded Impian
+                    </h1>
+                    <p class="text-gray-200 text-base sm:text-lg max-w-xl mx-auto lg:mx-0 font-normal">
+                        Razka WNI menyediakan koleksi sepatu original dari berbagai merk terkemuka. Melayani pembelian Cash & Angsuran ringan lewat E-Wallet / Bank.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
+                        <a href="#katalog" class="bg-white text-brand-900 font-bold px-8 py-3.5 rounded-xl shadow-lg hover:bg-gray-100 transition text-center">
+                            Lihat Koleksi
+                        </a>
+                        <a href="#simulasi" class="bg-brand-600/50 hover:bg-brand-600 text-white border border-white/30 font-semibold px-8 py-3.5 rounded-xl transition backdrop-blur-sm text-center">
+                            Simulasi Cicilan
+                        </a>
+                    </div>
+                </div>
+                <div class="flex justify-center">
+                    <div class="relative w-full max-w-md">
+                        <div class="absolute -inset-1 bg-gradient-to-r from-pink-600 to-purple-600 rounded-3xl blur opacity-30 animate-pulse"></div>
+                        <img src="https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=800&q=80" alt="Razka WNI Showcase" class="relative rounded-2xl shadow-2xl object-cover border-4 border-white/10 w-full h-[380px]">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16">
+
+        <!-- Filters & Catalog Header -->
+        <section id="katalog" class="scroll-mt-24">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-900">Katalog Sepatu Terbaru</h2>
+                    <p class="text-gray-500 mt-1">Pilih sepatu favoritmu dan tentukan metode pembayarannya.</p>
+                </div>
+                
+                <!-- Category Filters -->
+                <div class="flex flex-wrap gap-2" id="brand-filters">
+                    <button onclick="filterBrand('all')" class="filter-btn active-filter bg-brand-600 text-white font-semibold px-4 py-2 rounded-lg text-sm transition">Semua</button>
+                    <button onclick="filterBrand('Nike')" class="filter-btn bg-white text-gray-600 border border-gray-200 font-semibold px-4 py-2 rounded-lg text-sm hover:border-brand-600 transition">Nike</button>
+                    <button onclick="filterBrand('Adidas')" class="filter-btn bg-white text-gray-600 border border-gray-200 font-semibold px-4 py-2 rounded-lg text-sm hover:border-brand-600 transition">Adidas</button>
+                    <button onclick="filterBrand('Jordan')" class="filter-btn bg-white text-gray-600 border border-gray-200 font-semibold px-4 py-2 rounded-lg text-sm hover:border-brand-600 transition">Jordan</button>
+                    <button onclick="filterBrand('New Balance')" class="filter-btn bg-white text-gray-600 border border-gray-200 font-semibold px-4 py-2 rounded-lg text-sm hover:border-brand-600 transition">New Balance</button>
+                    <button onclick="filterBrand('Puma')" class="filter-btn bg-white text-gray-600 border border-gray-200 font-semibold px-4 py-2 rounded-lg text-sm hover:border-brand-600 transition">Puma</button>
+                </div>
+            </div>
+
+            <!-- Product Cards Grid -->
+            <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Javascript will render items here -->
+            </div>
+        </section>
+
+        <!-- Size Chart Table Section -->
+        <section id="size-chart" class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-gray-100 scroll-mt-24">
+            <div class="max-w-3xl mb-6">
+                <h2 class="text-2xl font-bold text-gray-900 flex items-center gap-2">
+                    <i class="fa-solid fa-ruler-horizontal text-brand-600"></i> Panduan Tabel Ukuran Sepatu (Size Chart)
+                </h2>
+                <p class="text-gray-500 text-sm mt-1">Pastikan Anda mengukur panjang kaki dalam centimeter (cm) sebelum membeli agar pas di kaki.</p>
+            </div>
+
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse min-w-[500px]">
+                    <thead>
+                        <tr class="bg-gray-100 text-gray-700 text-sm font-semibold uppercase tracking-wider">
+                            <th class="p-4 rounded-l-xl">EU (Indonesia)</th>
+                            <th class="p-4">US (Men)</th>
+                            <th class="p-4">UK</th>
+                            <th class="p-4 rounded-r-xl">Panjang Kaki (CM)</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-100 text-sm font-medium text-gray-600">
+                        <tr class="hover:bg-brand-50/50 transition">
+                            <td class="p-4 font-bold text-brand-700">38</td>
+                            <td class="p-4">5.5</td>
+                            <td class="p-4">5.0</td>
+                            <td class="p-4">24.0 cm</td>
+                        </tr>
+                        <tr class="hover:bg-brand-50/50 transition">
+                            <td class="p-4 font-bold text-brand-700">39</td>
+                            <td class="p-4">6.5</td>
+                            <td class="p-4">6.0</td>
+                            <td class="p-4">24.5 cm</td>
+                        </tr>
+                        <tr class="hover:bg-brand-50/50 transition">
+                            <td class="p-4 font-bold text-brand-700">40</td>
+                            <td class="p-4">7.0</td>
+                            <td class="p-4">6.0</td>
+                            <td class="p-4">25.0 cm</td>
+                        </tr>
+                        <tr class="hover:bg-brand-50/50 transition">
+                            <td class="p-4 font-bold text-brand-700">41</td>
+                            <td class="p-4">8.0</td>
+                            <td class="p-4">7.0</td>
+                            <td class="p-4">26.0 cm</td>
+                        </tr>
+                        <tr class="hover:bg-brand-50/50 transition">
+                            <td class="p-4 font-bold text-brand-700">42</td>
+                            <td class="p-4">8.5</td>
+                            <td class="p-4">7.5</td>
+                            <td class="p-4">26.5 cm</td>
+                        </tr>
+                        <tr class="hover:bg-brand-50/50 transition">
+                            <td class="p-4 font-bold text-brand-700">43</td>
+                            <td class="p-4">9.5</td>
+                            <td class="p-4">8.5</td>
+                            <td class="p-4">27.5 cm</td>
+                        </tr>
+                        <tr class="hover:bg-brand-50/50 transition">
+                            <td class="p-4 font-bold text-brand-700">44</td>
+                            <td class="p-4">10.0</td>
+                            <td class="p-4">9.0</td>
+                            <td class="p-4">28.0 cm</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Payment Methods & Installment Section -->
+        <section id="pembayaran" class="grid grid-cols-1 lg:grid-cols-2 gap-8 scroll-mt-24">
+            
+            <!-- Payment Methods Info -->
+            <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-gray-100 flex flex-col justify-between">
+                <div>
+                    <h2 class="text-2xl font-bold text-gray-900 mb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-wallet text-brand-600"></i> Metode Pembayaran
+                    </h2>
+                    <p class="text-gray-500 text-sm mb-6">Nikmati kemudahan transaksi Cash tunai maupun Angsuran / Cicilan berkala di Razka WNI.</p>
+                    
+                    <div class="space-y-6">
+                        <!-- Cash & Transfer -->
+                        <div>
+                            <h4 class="font-bold text-gray-800 text-sm uppercase tracking-wider mb-3 flex items-center gap-2">
+                                <i class="fa-solid fa-building-columns text-brand-500"></i> Transfer Bank (Cash / Lunas)
+                            </h4>
+                            <div class="grid grid-cols-3 sm:grid-cols-4 gap-3 text-center">
+                                <div class="p-3 bg-gray-50 rounded-xl border border-gray-200 font-bold text-blue-900 text-xs">BCA</div>
+                                <div class="p-3 bg-gray-50 rounded-xl border border-gray-200 font-bold text-blue-600 text-xs">BRI</div>
+                                <div class="p-3 bg-gray-50 rounded-xl border border-gray-200 font-bold text-emerald-700 text-xs">BSI</div>
+                                <div class="p-3 bg-gray-50 rounded-xl border border-gray-200 font-bold text-yellow-600 text-xs">MANDIRI</div>
+                            </div>
+                        </div>
+
+                        <!-- E-Wallet & Angsuran -->
+                        <div>
+                            <h4 class="font-bold text-gray-800 text-sm uppercase tracking-wider mb-3 flex items-center gap-2">
+                                <i class="fa-solid fa-mobile-screen-button text-brand-500"></i> E-Wallet & Angsuran
+                            </h4>
+                            <div class="grid grid-cols-3 sm:grid-cols-4 gap-3 text-center">
+                                <div class="p-3 bg-blue-50 rounded-xl border border-blue-200 font-bold text-blue-500 text-xs">DANA</div>
+                                <div class="p-3 bg-purple-50 rounded-xl border border-purple-200 font-bold text-purple-700 text-xs">OVO</div>
+                                <div class="p-3 bg-green-50 rounded-xl border border-green-200 font-bold text-green-600 text-xs">GOPAY</div>
+                                <div class="p-3 bg-orange-50 rounded-xl border border-orange-200 font-bold text-orange-600 text-xs">SHOPEEPAY</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8 p-4 bg-amber-50 rounded-xl border border-amber-200 text-amber-800 text-xs flex items-start gap-3">
+                    <i class="fa-solid fa-circle-info text-amber-600 text-base mt-0.5"></i>
+                    <div>
+                        <strong>Catatan Pembayaran Angsuran:</strong>
+                        <p class="mt-0.5">Pengajuan angsuran e-wallet dapat disesuaikan dengan fitur PayLater di akun Anda (Spaylater, GoPay Later, OVO PayLater) atau sistem cicilan internal Razka WNI via kesepakatan WhatsApp.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Installment Calculator Widget -->
+            <div id="simulasi" class="bg-gradient-to-br from-gray-900 to-brand-900 text-white rounded-2xl p-6 sm:p-8 shadow-xl flex flex-col justify-between">
+                <div>
+                    <h2 class="text-2xl font-bold mb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-calculator text-brand-500"></i> Kalkulator Simulasi Angsuran
+                    </h2>
+                    <p class="text-gray-300 text-sm mb-6">Hitung perkiraan cicilan bulanan untuk sepatu idamanmu.</p>
+
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-300 mb-1">Harga Sepatu (Rp)</label>
+                            <input type="number" id="calc-price" value="1500000" placeholder="Masukkan harga" class="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-2.5 text-white focus:outline-none focus:ring-2 focus:ring-brand-500 font-semibold">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-300 mb-1">Uang Muka / DP (Rp)</label>
+                            <input type="number" id="calc-dp" value="300000" placeholder="Masukkan DP" class="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-2.5 text-white focus:outline-none focus:ring-2 focus:ring-brand-500 font-semibold">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-300 mb-1">Tenor Angsuran</label>
+                            <select id="calc-tenure" class="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-2.5 text-white focus:outline-none focus:ring-2 focus:ring-brand-500 font-semibold [&>option]:text-gray-900">
+                                <option value="2">2 Bulan</option>
+                                <option value="3" selected>3 Bulan</option>
+                                <option value="6">6 Bulan</option>
+                                <option value="12">12 Bulan</option>
+                            </select>
+                        </div>
+
+                        <button onclick="calculateInstallment()" class="w-full bg-brand-500 hover:bg-brand-600 font-bold py-3 rounded-xl transition shadow-lg mt-2">
+                            Hitung Simulasi
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Simulation Output -->
+                <div class="mt-6 pt-6 border-t border-white/10 text-center bg-white/5 rounded-xl p-4">
+                    <span class="text-xs text-gray-400 uppercase font-semibold">Estimasi Cicilan per Bulan</span>
+                    <div id="calc-result" class="text-3xl font-extrabold text-brand-400 mt-1">Rp 420.000 /bln</div>
+                    <span class="text-[11px] text-gray-400 block mt-1">*Bunga ringan 2.5% / bln included</span>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-12 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-4">RAZKA WNI</h3>
+                    <p class="
